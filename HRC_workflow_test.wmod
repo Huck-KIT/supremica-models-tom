@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="http://waters.sourceforge.net/xsd/module" xmlns:B="http://waters.sourceforge.net/xsd/base" Name="HRC_workflow_test">
+<EventDeclList>
+<EventDecl Kind="CONTROLLABLE" Name="wait"/>
+<EventDecl Kind="CONTROLLABLE" Name="return"/>
+<EventDecl Kind="CONTROLLABLE" Name="sim_rH"/>
+<EventDecl Kind="CONTROLLABLE" Name="sim_rC"/>
+<EventDecl Kind="CONTROLLABLE" Name="sim_mC"/>
+<EventDecl Kind="CONTROLLABLE" Name="sim_pB"/>
+<EventDecl Kind="CONTROLLABLE" Name="rea_robotDone"/>
+<EventDecl Kind="PROPOSITION" Name=":accepting"/>
+<EventDecl Kind="CONTROLLABLE" Name="sim_t"/>
+<EventDecl Kind="CONTROLLABLE" Name="rea_robotWork"/>
+<EventDecl Kind="PROPOSITION" Name=":forbidden"/>
+<EventDecl Kind="CONTROLLABLE" Name="rea_remain"/>
+<EventDecl Kind="CONTROLLABLE" Name="sim_rP"/>
+</EventDeclList>
+<ComponentList>
+<SimpleComponent Kind="PLANT" Name="human_worker">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="qH1">
+<PointGeometry>
+<Point X="1072" Y="368"/>
+</PointGeometry>
+<InitialArrowGeometry>
+<Point X="-1" Y="-58"/>
+</InitialArrowGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="qH2">
+<PointGeometry>
+<Point X="1216" Y="336"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-12" Y="11"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="qH3">
+<PointGeometry>
+<Point X="896" Y="336"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="qH4">
+<PointGeometry>
+<Point X="864" Y="528"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="qH5">
+<PointGeometry>
+<Point X="1072" Y="544"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="qH6">
+<PointGeometry>
+<Point X="1248" Y="528"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="qH1" Target="qH1">
+<LabelBlock>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-16" Y="-26"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1073" Y="319"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH2" Target="qH2">
+<LabelBlock>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-14" Y="-21"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1207" Y="286"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH3" Target="qH3">
+<LabelBlock>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-17" Y="-22"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="873" Y="289"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH4" Target="qH4">
+<LabelBlock>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-13" Y="8"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="830" Y="569"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH5" Target="qH5">
+<LabelBlock>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-10" Y="10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1069" Y="592"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH6" Target="qH6">
+<LabelBlock>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-16" Y="9"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1279" Y="573"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH1" Target="qH5">
+<LabelBlock>
+<SimpleIdentifier Name="sim_mC"/>
+<LabelGeometry Anchor="NW">
+<Point X="-5" Y="55"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1097" Y="456"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH5" Target="qH1">
+<LabelBlock>
+<SimpleIdentifier Name="return"/>
+<LabelGeometry Anchor="NW">
+<Point X="-33" Y="56"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1047" Y="456"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH1" Target="qH4">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rC"/>
+<LabelGeometry Anchor="NW">
+<Point X="-72" Y="48"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="984" Y="468"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH4" Target="qH1">
+<LabelBlock>
+<SimpleIdentifier Name="return"/>
+<LabelGeometry Anchor="NW">
+<Point X="-54" Y="-10"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="952" Y="428"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH6" Target="qH1">
+<LabelBlock>
+<SimpleIdentifier Name="return"/>
+<LabelGeometry Anchor="NW">
+<Point X="31" Y="56"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1150" Y="461"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH1" Target="qH6">
+<LabelBlock>
+<SimpleIdentifier Name="sim_pB"/>
+<LabelGeometry Anchor="NW">
+<Point X="34" Y="17"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1177" Y="430"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH1" Target="qH3">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rH"/>
+<LabelGeometry Anchor="NW">
+<Point X="-64" Y="-3"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="980" Y="374"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH3" Target="qH1">
+<LabelBlock>
+<SimpleIdentifier Name="return"/>
+<LabelGeometry Anchor="NW">
+<Point X="-22" Y="-22"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="988" Y="330"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH1" Target="qH2">
+<LabelBlock>
+<SimpleIdentifier Name="sim_t"/>
+<LabelGeometry Anchor="NW">
+<Point X="-27" Y="-23"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1139" Y="331"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH2" Target="qH1">
+<LabelBlock>
+<SimpleIdentifier Name="sim_t"/>
+<LabelGeometry Anchor="NW">
+<Point X="20" Y="-3"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1149" Y="373"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="qH2" Target="qH2">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rP"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1262" Y="342"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="robot">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="q_R1">
+<B:AttributeMap>
+<B:Attribute Name="robotStatus" Value="idle"/>
+</B:AttributeMap>
+<PointGeometry>
+<Point X="256" Y="128"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_R2">
+<PointGeometry>
+<Point X="256" Y="288"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="q_R1" Target="q_R2">
+<LabelBlock>
+<SimpleIdentifier Name="sim_pB"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="274" Y="208"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="q_R2" Target="q_R1">
+<LabelBlock>
+<SimpleIdentifier Name="rea_robotDone"/>
+<LabelGeometry Anchor="NW">
+<Point X="-75" Y="8"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="238" Y="208"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="q_R2" Target="q_R2">
+<LabelBlock>
+<SimpleIdentifier Name="rea_robotWork"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="211" Y="322"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="workpiece">
+<Graph>
+<NodeList>
+<SimpleNode Initial="true" Name="q_W0000">
+<PointGeometry>
+<Point X="880" Y="128"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W0100">
+<PointGeometry>
+<Point X="752" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W1000">
+<PointGeometry>
+<Point X="1008" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W0001">
+<PointGeometry>
+<Point X="1008" Y="128"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_1100">
+<PointGeometry>
+<Point X="752" Y="336"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_1010">
+<PointGeometry>
+<Point X="1008" Y="336"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W1110">
+<PointGeometry>
+<Point X="880" Y="400"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W1111">
+<PointGeometry>
+<Point X="880" Y="496"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W1001">
+<PointGeometry>
+<Point X="1104" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W1011">
+<PointGeometry>
+<Point X="1104" Y="336"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W1101">
+<PointGeometry>
+<Point X="640" Y="336"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="q_W0101">
+<PointGeometry>
+<Point X="640" Y="208"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="q_W0000" Target="q_W1000">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rH"/>
+<LabelGeometry Anchor="NW">
+<Point X="-66" Y="11"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W0000" Target="q_W0100">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rC"/>
+<LabelGeometry Anchor="NW">
+<Point X="-76" Y="-28"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W0100" Target="q_1100">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rH"/>
+<LabelGeometry Anchor="NW">
+<Point X="-102" Y="-8"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W1000" Target="q_1010">
+<LabelBlock>
+<SimpleIdentifier Name="rea_robotDone"/>
+<LabelGeometry Anchor="NW">
+<Point X="8" Y="-1"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_1100" Target="q_W1110">
+<LabelBlock>
+<SimpleIdentifier Name="rea_robotDone"/>
+<LabelGeometry Anchor="NW">
+<Point X="-51" Y="15"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_1010" Target="q_W1110">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rC"/>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W1000" Target="q_1100">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rC"/>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W1110" Target="q_W1111">
+<LabelBlock>
+<SimpleIdentifier Name="sim_mC"/>
+<LabelGeometry Anchor="NW">
+<Point X="10" Y="12"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W0000" Target="q_W0001">
+<LabelBlock>
+<SimpleIdentifier Name="sim_mC"/>
+<LabelGeometry Anchor="NW">
+<Point X="-39" Y="-30"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W1000" Target="q_W1001">
+<LabelBlock>
+<SimpleIdentifier Name="sim_mC"/>
+<LabelGeometry Anchor="NW">
+<Point X="-25" Y="-28"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_1010" Target="q_W1011">
+<LabelBlock>
+<SimpleIdentifier Name="sim_mC"/>
+<LabelGeometry Anchor="NW">
+<Point X="-19" Y="-26"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_1100" Target="q_W1101">
+<LabelBlock>
+<SimpleIdentifier Name="sim_mC"/>
+<LabelGeometry Anchor="NW">
+<Point X="-63" Y="-26"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W0100" Target="q_W0101">
+<LabelBlock>
+<SimpleIdentifier Name="sim_mC"/>
+<LabelGeometry Anchor="NW">
+<Point X="-63" Y="-29"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="q_W0001" Target="q_W0001">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1049" Y="103"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="q_W1001" Target="q_W1001">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1154" Y="186"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="q_W1011" Target="q_W1011">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="1154" Y="328"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="q_W1110" Target="q_W1110">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="884" Y="330"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="q_W1111" Target="q_W1111">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="839" Y="540"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="q_W1101" Target="q_W1101">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="588" Y="337"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="q_W0101" Target="q_W0101">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+</LabelBlock>
+<SplineGeometry>
+<Point X="599" Y="211"/>
+</SplineGeometry>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+<SimpleComponent Kind="PLANT" Name="collision_check">
+<Graph Deterministic="false">
+<NodeList>
+<SimpleNode Initial="true" Name="S0">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="368" Y="192"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="0" Y="10"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="RobotInWorkspace">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="576" Y="192"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="12" Y="-14"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="HumanInWorkspace">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
+<PointGeometry>
+<Point X="176" Y="192"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-135" Y="-9"/>
+</LabelGeometry>
+</SimpleNode>
+<SimpleNode Name="COLLISION">
+<EventList>
+<SimpleIdentifier Name=":forbidden"/>
+</EventList>
+<PointGeometry>
+<Point X="368" Y="-16"/>
+</PointGeometry>
+<LabelGeometry Anchor="NW">
+<Point X="-37" Y="-21"/>
+</LabelGeometry>
+</SimpleNode>
+</NodeList>
+<EdgeList>
+<Edge Source="S0" Target="RobotInWorkspace">
+<LabelBlock>
+<SimpleIdentifier Name="rea_robotWork"/>
+<LabelGeometry Anchor="NW">
+<Point X="-46" Y="-25"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="472" Y="177"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="RobotInWorkspace" Target="S0">
+<LabelBlock>
+<SimpleIdentifier Name="rea_robotDone"/>
+<LabelGeometry Anchor="NW">
+<Point X="-36" Y="7"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="472" Y="207"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="S0" Target="HumanInWorkspace">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rH"/>
+<LabelGeometry Anchor="NW">
+<Point X="-48" Y="14"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="272" Y="208"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="HumanInWorkspace" Target="S0">
+<LabelBlock>
+<SimpleIdentifier Name="return"/>
+<LabelGeometry Anchor="NW">
+<Point X="-27" Y="-35"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="272" Y="176"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="S0" Target="S0">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+<SimpleIdentifier Name="rea_robotDone"/>
+<SimpleIdentifier Name="return"/>
+<SimpleIdentifier Name="sim_mC"/>
+<SimpleIdentifier Name="sim_pB"/>
+<SimpleIdentifier Name="sim_rC"/>
+<SimpleIdentifier Name="sim_rP"/>
+<SimpleIdentifier Name="sim_t"/>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-44" Y="3"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="371" Y="273"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="RobotInWorkspace" Target="RobotInWorkspace">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+<SimpleIdentifier Name="rea_robotWork"/>
+<SimpleIdentifier Name="return"/>
+<SimpleIdentifier Name="sim_mC"/>
+<SimpleIdentifier Name="sim_pB"/>
+<SimpleIdentifier Name="sim_rC"/>
+<SimpleIdentifier Name="sim_rP"/>
+<SimpleIdentifier Name="sim_t"/>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-21" Y="3"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="579" Y="275"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="RobotInWorkspace" Target="COLLISION">
+<LabelBlock>
+<SimpleIdentifier Name="sim_rH"/>
+<LabelGeometry Anchor="NW">
+<Point X="12" Y="-17"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+<Edge Source="HumanInWorkspace" Target="HumanInWorkspace">
+<LabelBlock>
+<SimpleIdentifier Name="rea_remain"/>
+<SimpleIdentifier Name="rea_robotDone"/>
+<SimpleIdentifier Name="sim_mC"/>
+<SimpleIdentifier Name="sim_pB"/>
+<SimpleIdentifier Name="sim_rC"/>
+<SimpleIdentifier Name="sim_rH"/>
+<SimpleIdentifier Name="sim_rP"/>
+<SimpleIdentifier Name="sim_t"/>
+<SimpleIdentifier Name="wait"/>
+<LabelGeometry Anchor="NW">
+<Point X="-50" Y="3"/>
+</LabelGeometry>
+</LabelBlock>
+<SplineGeometry>
+<Point X="176" Y="268"/>
+</SplineGeometry>
+</Edge>
+<Edge Source="HumanInWorkspace" Target="COLLISION">
+<LabelBlock>
+<SimpleIdentifier Name="rea_robotWork"/>
+<LabelGeometry Anchor="NW">
+<Point X="-68" Y="-32"/>
+</LabelGeometry>
+</LabelBlock>
+</Edge>
+</EdgeList>
+</Graph>
+</SimpleComponent>
+</ComponentList>
+</Module>
