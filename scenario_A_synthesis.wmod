@@ -131,9 +131,19 @@
 <Point X="112" Y="-10"/>
 </SplineGeometry>
 <GuardActionBlock>
+<Guards>
+<BinaryExpression Operator="==">
+<SimpleIdentifier Name="cover_mounted"/>
+<IntConstant Value="0"/>
+</BinaryExpression>
+</Guards>
 <Actions>
 <BinaryExpression Operator="=">
 <SimpleIdentifier Name="collab_workspace_occupied_human"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+<BinaryExpression Operator="=">
+<SimpleIdentifier Name="cover_mounted"/>
 <IntConstant Value="1"/>
 </BinaryExpression>
 </Actions>
@@ -328,9 +338,6 @@
 <Graph>
 <NodeList>
 <SimpleNode Initial="true" Name="S0">
-<EventList>
-<SimpleIdentifier Name=":accepting"/>
-</EventList>
 <PointGeometry>
 <Point X="368" Y="112"/>
 </PointGeometry>
@@ -339,6 +346,9 @@
 </LabelGeometry>
 </SimpleNode>
 <SimpleNode Name="S1">
+<EventList>
+<SimpleIdentifier Name=":accepting"/>
+</EventList>
 <PointGeometry>
 <Point X="368" Y="336"/>
 </PointGeometry>
@@ -624,5 +634,17 @@
 </EdgeList>
 </Graph>
 </SimpleComponent>
+<VariableComponent Name="cover_mounted">
+<VariableRange><BinaryExpression Operator="..">
+<IntConstant Value="0"/>
+<IntConstant Value="1"/>
+</BinaryExpression>
+</VariableRange>
+<VariableInitial><BinaryExpression Operator="==">
+<SimpleIdentifier Name="cover_mounted"/>
+<IntConstant Value="0"/>
+</BinaryExpression>
+</VariableInitial>
+</VariableComponent>
 </ComponentList>
 </Module>
